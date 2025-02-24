@@ -172,6 +172,8 @@ class Escripts:
         except subprocess.CalledProcessError as e:
             logging.error("Ошибка при выполнении скрипта: %s", e)
             raise
+        except KeyboardInterrupt:
+            pass
 
     def run_alias(self, data: Dict[str, Any], args: Dict[str, Any]) -> None:
         """
